@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 16:49:05 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/03/13 20:44:04 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/03/13 22:07:05 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,21 +59,20 @@ typedef struct s_fratcol
 	double	y;
 	double	a;
 	double	b;
-	double	c_r;
-	double	c_i;
-	double	z_r;
-	double	z_i;
-	double	re_start;
-	double	re_end;
-	double	im_start;
-	double	im_end;
+	double	c_real;
+	double	c_imagin;
+	double	z_real;
+	double	z_imagin;
+	double	real_start;
+	double	real_end;
+	double	imagin_start;
+	double	imagin_end;
 	double	values;
 	double	zoom;
 	int		color_code;
 	int		iteration;
 	int		color;
 	int		julia;
-	int		julia_bool;
 	int		burning_ship;
 	t_image	img;
 }	t_fractol;

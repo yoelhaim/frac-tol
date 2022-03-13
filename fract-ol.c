@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 15:11:30 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/03/13 20:43:52 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/03/13 22:08:27 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void	callmlx(t_fractol *data)
 	data->img.img = mlx_new_image(data->mlx, 800, 800);
 	data->img.addr = mlx_get_data_addr(data->img.img, \
 	&data->img.bits_per_pixel, &data->img.line_length, &data->img.endian);
-	data->re_start = 0;
-	data->re_end = 0;
-	data->im_start = 0;
-	data->im_end = 0;
+	data->real_start = 0;
+	data->real_end = 0;
+	data->imagin_start = 0;
+	data->imagin_end = 0;
 	data->zoom = 2;
-	data->c_r = 0.285;
-	data->c_i = 0;
+	data->c_real = 0.285;
+	data->c_imagin = 0;
 	data->values = 100;
 	data->color_code = 0;
 	data->color = 0xff0801;
@@ -33,10 +33,10 @@ void	callmlx(t_fractol *data)
 
 int	mouse_get_vals(int x, int y, t_fractol *data)
 {
-	data->c_r = ft_map(x, 800, data->re_start - data->zoom, \
-	data->re_end + data->zoom);
-	data->c_i = ft_map(x, 800, data->im_start - data->zoom, \
-	data->im_end + data->zoom);
+	data->c_real = ft_map(x, 800, data->real_start - data->zoom, \
+	data->real_end + data->zoom);
+	data->c_imagin = ft_map(x, 800, data->imagin_start - data->zoom, \
+	data->imagin_end + data->zoom);
 	ft_draw(data);
 	return (0);
 }

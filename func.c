@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 15:23:22 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/03/13 20:39:34 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/03/13 22:09:19 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ void	my_mlx_pixel_put(t_fractol *data, int x, int y, int color)
 
 void	ft_mapped(t_fractol *data)
 {
-	data->a = ft_map(data->x, 800, data->re_start - data->zoom,
-			data->re_end + data->zoom);
-	data->b = ft_map(data->y, 800, data->im_start - data->zoom,
-			data->im_end + data->zoom);
+	data->a = ft_map(data->x, 800, data->real_start - data->zoom,
+			data->real_end + data->zoom);
+	data->b = ft_map(data->y, 800, data->imagin_start - data->zoom,
+			data->imagin_end + data->zoom);
 	if (!data->julia)
 	{
-		data->c_r = data->a;
-		data->c_i = data->b;
+		data->c_real = data->a;
+		data->c_imagin = data->b;
 	}
 }
 
@@ -43,23 +43,23 @@ void	ft_moves(int key, t_fractol *data)
 {
 	if (key == UP)
 	{
-		data->im_start += 0.1 * data->zoom;
-		data->im_end += 0.1 * data->zoom;
+		data->imagin_start += 0.1 * data->zoom;
+		data->imagin_end += 0.1 * data->zoom;
 	}
 	if (key == RIGHT)
 	{
-		data->re_start -= 0.1 * data->zoom;
-		data->re_end -= 0.1 * data->zoom;
+		data->real_start -= 0.1 * data->zoom;
+		data->real_end -= 0.1 * data->zoom;
 	}
 	if (key == DOWN)
 	{
-		data->im_start -= 0.1 * data->zoom;
-		data->im_end -= 0.1 * data->zoom;
+		data->imagin_start -= 0.1 * data->zoom;
+		data->imagin_end -= 0.1 * data->zoom;
 	}
 	if (key == LEFT)
 	{
-		data->re_start += 0.1 * data->zoom;
-		data->re_end += 0.1 * data->zoom;
+		data->real_start += 0.1 * data->zoom;
+		data->real_end += 0.1 * data->zoom;
 	}
 	ft_draw(data);
 }

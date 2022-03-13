@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 16:54:00 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/03/13 19:54:00 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/03/13 22:07:37 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ void	mandelbrot(t_fractol *data)
 {
 	while (data->iteration < data->values)
 	{
-		data->z_r = data->a * data->a - data->b * data->b;
-		data->z_i = data->a * data->b * 2;
+		data->z_real = data->a * data->a - data->b * data->b;
+		data->z_imagin = data->a * data->b * 2;
 		if (data->burning_ship)
-			data->z_i = fabs(data->a * data->b * 2);
-		data->a = data->z_r + data->c_r;
-		data->b = data->z_i + data->c_i;
+			data->z_imagin = fabs(data->a * data->b * 2);
+		data->a = data->z_real + data->c_real;
+		data->b = data->z_imagin + data->c_imagin;
 		data->iteration++;
 		if (data->a * data ->a + data->b * data->b > 4)
 			break ;
