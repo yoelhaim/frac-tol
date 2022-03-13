@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 15:23:22 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/03/13 16:53:44 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/03/13 20:39:34 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ void	ft_mapped(t_fractol *data)
 			data->re_end + data->zoom);
 	data->b = ft_map(data->y, 800, data->im_start - data->zoom,
 			data->im_end + data->zoom);
-	// if (data->julia)
-	// {
-	// 	data->c_r = data->a;
-	// 	data->c_i = data->b;
-	// }
+	if (!data->julia)
+	{
+		data->c_r = data->a;
+		data->c_i = data->b;
+	}
 }
 
 void	ft_moves(int key, t_fractol *data)
