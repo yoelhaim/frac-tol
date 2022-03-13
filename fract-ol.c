@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 15:11:30 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/03/13 22:08:27 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/03/13 22:19:55 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	mouse_get_vals(int x, int y, t_fractol *data)
 {
 	data->c_real = ft_map(x, 800, data->real_start - data->zoom, \
 	data->real_end + data->zoom);
-	data->c_imagin = ft_map(x, 800, data->imagin_start - data->zoom, \
+	data->c_imagin = ft_map(y, 800, data->imagin_start - data->zoom, \
 	data->imagin_end + data->zoom);
 	ft_draw(data);
 	return (0);
