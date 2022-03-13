@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 16:49:05 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/03/13 16:51:46 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/03/13 20:44:04 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <math.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <unistd.h>
 # define HEIGHT 700
 # define WIDTH 700
 # define MAX_ITERATION 100
@@ -30,6 +31,13 @@
 # define D 2
 # define Q 12
 # define ESC 53
+# define ANSI_COLOR_RED     "\x1b[31m"
+# define ANSI_COLOR_GREEN   "\x1b[32m"
+# define ANSI_COLOR_YELLOW  "\x1b[33m"
+# define ANSI_COLOR_BLUE    "\x1b[34m"
+# define ANSI_COLOR_MAGENTA "\x1b[35m"
+# define ANSI_COLOR_CYAN    "\x1b[36m"
+# define ANSI_COLOR_RESET   "\x1b[0m"
 
 typedef struct s_image {
 	void	*img;
@@ -64,6 +72,9 @@ typedef struct s_fratcol
 	int		color_code;
 	int		iteration;
 	int		color;
+	int		julia;
+	int		julia_bool;
+	int		burning_ship;
 	t_image	img;
 }	t_fractol;
 
@@ -76,4 +87,9 @@ int		inmouse(int keyhok, int x, int y, t_fractol *data);
 void	mandelbrot(t_fractol *data);
 void	ft_mapped(t_fractol *data);
 void	ft_get_color(t_fractol *data);
+void	ft_fractol(t_fractol data);
+void	printf_help(void);
+void	fractols(void);
+void	controls(void);
+int		mouse_get_vals(int x, int y, t_fractol *data);
 #endif
