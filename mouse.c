@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 15:37:47 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/03/13 22:10:30 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/03/14 13:27:31 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,14 @@ void	ft_get_color(t_fractol *data)
 		data->color = 0xFFFCA7;
 	else if (data->color_code == 7)
 		data->color = 0xf1f1e1;
+}
+
+void	resetdata(t_fractol *data)
+{
+	data->real_start = 0;
+		data->real_end = 0;
+		data->imagin_end = 0;
+		data->imagin_start = 0;
+		data->zoom = 2;
+		data->values = 100;
 }
