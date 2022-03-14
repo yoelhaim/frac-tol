@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 16:49:05 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/03/14 13:26:05 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/03/14 15:11:37 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# define HEIGHT 700
-# define WIDTH 700
-# define MAX_ITERATION 100
+# define HEIGHT 600
+# define WIDTH 600
 # define UP 126
 # define DOWN 125
 # define RIGHT 124
@@ -31,6 +30,7 @@
 # define D 2
 # define Q 12
 # define ESC 53
+# define QUITX 7
 # define PLUS 24
 # define MINS 27
 # define P 35
@@ -79,6 +79,7 @@ typedef struct s_fratcol
 	int		color;
 	int		julia;
 	int		burning_ship;
+	int		julia_set;
 	t_image	img;
 }	t_fractol;
 
