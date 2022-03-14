@@ -6,11 +6,19 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 15:37:47 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/03/14 13:27:31 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/03/14 15:16:51 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fract.h"
+
+void	change_value(t_fractol *data)
+{
+	if (data->julia_set)
+		data->julia_set = 0;
+	else
+		data->julia_set = 1;
+}
 
 int	inmouse(int keyhok, int x, int y, t_fractol *data)
 {
@@ -19,21 +27,23 @@ int	inmouse(int keyhok, int x, int y, t_fractol *data)
 	double	b_x;
 	double	b_y;
 
-	b_x = ft_map(x, 800, data->real_start - data->zoom, \
-	data->real_end + data->zoom);
-	b_y = ft_map(y, 800, data->imagin_start - data->zoom, \
-	data->imagin_end + data->zoom);
+	b_x = ft_map(x, WIDTH, data->real_start - data->zoom,
+			data->real_end + data->zoom);
+	b_y = ft_map(y, HEIGHT, data->imagin_start - data->zoom,
+			data->imagin_end + data->zoom);
 	if (keyhok == 5)
 		data->zoom /= 1.1;
 	if (keyhok == 4)
 		data->zoom *= 1.1;
-	a_x = ft_map(x, 800, data->real_start - data->zoom, \
-	data->real_end + data->zoom);
-	a_y = ft_map(y, 800, data->imagin_start - data->zoom, \
-	data->imagin_end + data->zoom);
+	if (keyhok == 1)
+		change_value(data);
+	a_x = ft_map(x, WIDTH, data->real_start - data->zoom,
+			data->real_end + data->zoom);
+	a_y = ft_map(y, HEIGHT, data->imagin_start - data->zoom,
+			data->imagin_end + data->zoom);
 	data->real_start += (b_x - a_x);
 	data->real_end += (b_x - a_x);
-	data-> imagin_start += (b_y - a_y);
+	data->imagin_start += (b_y - a_y);
 	data->imagin_end += (b_y - a_y);
 	ft_draw(data);
 	return (0);
@@ -65,9 +75,9 @@ void	ft_get_color(t_fractol *data)
 void	resetdata(t_fractol *data)
 {
 	data->real_start = 0;
-		data->real_end = 0;
-		data->imagin_end = 0;
-		data->imagin_start = 0;
-		data->zoom = 2;
-		data->values = 100;
+	data->real_end = 0;
+	data->imagin_end = 0;
+	data->imagin_start = 0;
+	data->zoom = 2;
+	data->values = 100;
 }
