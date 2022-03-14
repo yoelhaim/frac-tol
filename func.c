@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 15:23:22 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/03/14 13:09:19 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/03/14 13:26:39 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,16 +76,18 @@ int	set_hook(int keyh, t_fractol *data)
 		mlx_destroy_window(data->mlx, data->win);
 		exit(1);
 	}
-	if (keyh == PLUS)
+	if (keyh == PLUS || keyh == P)
 	{
 		if (data->values < 100)
 			data->values += 10.0;
 	}
-	if (keyh == MINS)
+	if (keyh == MINS || keyh == N)
 	{
 		if (data->values > 10)
 			data->values -= 10.0;
 	}
+	if (keyh == RESTART)
+		resetdata(data);
 	ft_draw(data);
 	return (0);
 }

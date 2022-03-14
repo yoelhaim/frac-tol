@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 16:49:05 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/03/14 12:59:08 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/03/14 13:26:05 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@
 # define ESC 53
 # define PLUS 24
 # define MINS 27
+# define P 35
+# define N 45
+# define RESTART 15
 # define ANSI_COLOR_RED     "\x1b[31m"
 # define ANSI_COLOR_GREEN   "\x1b[32m"
 # define ANSI_COLOR_YELLOW  "\x1b[33m"
@@ -93,4 +96,5 @@ void	printf_help(void);
 void	fractols(void);
 void	controls(void);
 int		mouse_get_vals(int x, int y, t_fractol *data);
+void	resetdata(t_fractol *data);
 #endif
