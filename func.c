@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 15:23:22 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/03/13 22:09:19 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/03/14 13:09:19 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,22 +41,22 @@ void	ft_mapped(t_fractol *data)
 
 void	ft_moves(int key, t_fractol *data)
 {
-	if (key == UP)
+	if (key == UP || key == W)
 	{
 		data->imagin_start += 0.1 * data->zoom;
 		data->imagin_end += 0.1 * data->zoom;
 	}
-	if (key == RIGHT)
+	if (key == RIGHT || key == D)
 	{
 		data->real_start -= 0.1 * data->zoom;
 		data->real_end -= 0.1 * data->zoom;
 	}
-	if (key == DOWN)
+	if (key == DOWN || key == S)
 	{
 		data->imagin_start -= 0.1 * data->zoom;
 		data->imagin_end -= 0.1 * data->zoom;
 	}
-	if (key == LEFT)
+	if (key == LEFT || key == A)
 	{
 		data->real_start += 0.1 * data->zoom;
 		data->real_end += 0.1 * data->zoom;
@@ -66,7 +66,8 @@ void	ft_moves(int key, t_fractol *data)
 
 int	set_hook(int keyh, t_fractol *data)
 {
-	if (keyh == LEFT || keyh == RIGHT || keyh == UP || keyh == DOWN)
+	if (keyh == LEFT || keyh == RIGHT || keyh == UP || keyh == DOWN \
+	|| keyh == A || keyh == S || keyh == D || keyh == W)
 		ft_moves(keyh, data);
 	if (keyh == 8)
 		ft_get_color(data);
@@ -74,6 +75,16 @@ int	set_hook(int keyh, t_fractol *data)
 	{
 		mlx_destroy_window(data->mlx, data->win);
 		exit(1);
+	}
+	if (keyh == PLUS)
+	{
+		if (data->values < 100)
+			data->values += 10.0;
+	}
+	if (keyh == MINS)
+	{
+		if (data->values > 10)
+			data->values -= 10.0;
 	}
 	ft_draw(data);
 	return (0);

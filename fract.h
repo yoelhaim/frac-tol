@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 16:49:05 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/03/13 22:07:05 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/03/14 12:59:08 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@
 # define D 2
 # define Q 12
 # define ESC 53
+# define PLUS 24
+# define MINS 27
 # define ANSI_COLOR_RED     "\x1b[31m"
 # define ANSI_COLOR_GREEN   "\x1b[32m"
 # define ANSI_COLOR_YELLOW  "\x1b[33m"

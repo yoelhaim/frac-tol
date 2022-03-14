@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 15:11:30 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/03/13 22:19:55 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/03/14 13:04:14 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	callmlx(t_fractol *data)
 	data->c_imagin = 0;
 	data->values = 100;
 	data->color_code = 0;
-	data->color = 0xff0801;
+	data->color = 0x1A40DC;
 }
 
 int	mouse_get_vals(int x, int y, t_fractol *data)
