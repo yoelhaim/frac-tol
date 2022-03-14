@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 15:23:22 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/03/14 13:26:39 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/03/14 15:17:22 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	my_mlx_pixel_put(t_fractol *data, int x, int y, int color)
 
 void	ft_mapped(t_fractol *data)
 {
-	data->a = ft_map(data->x, 800, data->real_start - data->zoom,
+	data->a = ft_map(data->x, WIDTH, data->real_start - data->zoom,
 			data->real_end + data->zoom);
-	data->b = ft_map(data->y, 800, data->imagin_start - data->zoom,
+	data->b = ft_map(data->y, HEIGHT, data->imagin_start - data->zoom,
 			data->imagin_end + data->zoom);
 	if (!data->julia)
 	{
@@ -71,7 +71,7 @@ int	set_hook(int keyh, t_fractol *data)
 		ft_moves(keyh, data);
 	if (keyh == 8)
 		ft_get_color(data);
-	if (keyh == ESC || keyh == QUIT)
+	if (keyh == ESC || keyh == QUIT || keyh == QUITX)
 	{
 		mlx_destroy_window(data->mlx, data->win);
 		exit(1);
