@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 16:54:00 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/03/13 22:07:37 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/03/14 13:34:17 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ void	ft_draw(t_fractol *data)
 
 	mlx_clear_window (data->mlx, data->win);
 	data->x = 0;
-	while (data->x < 800)
+	while (data->x < WIDTH)
 	{
 		data->y = 0;
-		while (data->y < 800)
+		while (data->y < WIDTH)
 		{
 			ft_mapped (data);
 			data->iteration = 0;
