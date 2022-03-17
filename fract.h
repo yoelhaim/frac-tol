@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 16:49:05 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/03/14 15:11:37 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/03/17 12:59:47 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,9 +93,10 @@ void	mandelbrot(t_fractol *data);
 void	ft_mapped(t_fractol *data);
 void	ft_get_color(t_fractol *data);
 void	ft_fractol(t_fractol data);
-void	printf_help(void);
 void	fractols(void);
 void	controls(void);
 int		mouse_get_vals(int x, int y, t_fractol *data);
 void	resetdata(t_fractol *data);
+int		ft_strcmp(char *s, char *s2);
+int		destroywindwo(t_fractol *data);
 #endif

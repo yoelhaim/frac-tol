@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 15:11:30 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/03/14 15:19:53 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/03/14 16:25:51 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,12 @@ void	callmlx(t_fractol *data)
 	data->julia_set = 0;
 }
 
+int	destroywindwo(t_fractol *data)
+{
+	mlx_destroy_window(data->mlx, data->win);
+	exit(1);
+}
+
 int	mouse_get_vals(int x, int y, t_fractol *data)
 {
 	if (data->julia_set)
@@ -50,6 +56,7 @@ void	ft_fractol(t_fractol data)
 	callmlx(&data);
 	mlx_hook(data.win, 2, 0, set_hook, &data);
 	mlx_mouse_hook (data.win, inmouse, &data);
+	mlx_hook(data.win, 17, 0, destroywindwo, &data);
 	ft_draw(&data);
 	if (data.julia)
 	{
