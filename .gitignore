@@ -1,3 +1,5 @@
 .vscode/
 .DStore
 *.o
+.gitignore
+
