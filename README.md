@@ -4,7 +4,10 @@
 
 run  : make 
 <br/>
-./fractol 1 
-./fractol 2
-./fractol 3
+<p style="color:red">./fractol 1 </p>
+<br/>
+<p style="color:red">./fractol 2 </p>
+<br/>
+<p style="color:red">./fractol 3 </p>
+<br/>
 
